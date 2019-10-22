@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>From Zero to Hero</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Rainer M. Krug" />
+    <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
+    <link href="libs/remark-css/middlebury.css" rel="stylesheet" />
+    <link rel="stylesheet" href="middlebury-fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# From Zero to Hero
+## Metadata can be Easy!
+### Rainer M. Krug
+### Department of Evolutionary Biology and Environmental Studies, UZH
+### 2019/10/24 (updated: 2019-10-22)
+
+---
+
+class: bottom, left
+
+background-image: url(./fig/metadata.png)
+background-size: cover  
+.dt[ Image credit: [dataedo](https://dataedo.com/kb/data-glossary/what-is-metadata) ]
+
+
+
+&lt;style type="text/css"&gt;
+/* custom.css */
+
+.title-slide {
+#  background-color: coral;
+  background-image: url("fig/uzh_logo_e_pos.svg"), url("fig/qr_talk.svg"), url("https://zenodo.org/badge/216552472.svg");
+  background-size: 20%, 10%, 20%;
+  background-position: 1% 1%, 99% 1%, 1% 99%;
+}
+
+.alert {
+  color: #FF0000;
+  text-align: center;
+  font-size: xx-large;
+  float: middle;
+}
+
+.red {
+  color: #FF0000;
+}
+
+.blue {
+  color: #0000FF;
+}
+
+.dt {
+  font-size: x-small;
+  position: absolute;
+  bottom: 10px;
+  width: 50%;
+}]
+
+&lt;/style&gt;
+
+---
+background-image: url(./fig/5141328136_16d8f73ee7_b_BW.jpg)
+background-size: cover
+.dt[ Image credit: [randylane](http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/IceAge.jpg)
+background-size: cover
+.dt[ Image credit: [Ice Age](https://i.ytimg.com/vi/YsUyzkjOY_c/maxresdefault.jpg) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/FAIR_EN.png)
+background-size: contain
+.dt[ Image credit: [ogsl](https://ogsl.ca/sites/default/files/FAIR_EN.png) ]
+
+see [Force11](https://www.force11.org/group/fairgroup/fairprinciples) for more info
+
+???
+TO BE FINDABLE:
+
+F1. (meta)data are assigned a globally unique and eternally persistent identifier.
+
+**F2. data are described with rich metadata.**
+
+F3. (meta)data are registered or indexed in a searchable resource.
+
+F4. metadata specify the data identifier.
+
+TO BE ACCESSIBLE:
+
+A1  (meta)data are retrievable by their identifier using a standardized communications protocol.
+
+A1.1 the protocol is open, free, and universally implementable.
+
+A1.2 the protocol allows for an authentication and authorization procedure, where necessary.
+
+**A2 metadata are accessible, even when the data are no longer available.**
+
+TO BE INTEROPERABLE:
+
+I1. (meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation.
+
+**I2. (meta)data use vocabularies that follow FAIR principles.**
+
+I3. (meta)data include qualified references to other (meta)data.
+
+
+TO BE RE-USABLE:
+
+**R1. meta(data) have a plurality of accurate and relevant attributes.**
+
+R1.1. (meta)data are released with a clear and accessible data usage license.
+
+R1.2. (meta)data are associated with their provenance.
+
+R1.3. (meta)data meet domain-relevant community standards.
+
+ 
+---
+class: center, top
+
+#  Why do we need this?
+
+--
+.left[
+- Whose MSc / PhD / first research project was more than 3 years ago? 
+]
+
+--
+
+.left[
+- Who remembers 
+
+  - where the data is and if it is still readable?
+  - what the column names mean?
+  - which units were used?
+  - how the analysis was done (script)?
+]
+
+--
+
+# .red[How can you re-use your data?]
+
+--
+
+# .red[How can anybody else re-use your data?]
+---
+class: bottom, left
+
+background-image: url(./fig/5141328136_16d8f73ee7_b_BW.jpg)
+background-size: cover
+.dt[ Image credit: [randylane](http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/pile-of-paper.png)
+background-size: cover
+.dt[ Image credit: [lunchticket](https://lunchticket.org/importance-following-submission-guidelines/pile-of-paper1/) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/screaming.jpg)
+background-size: cover
+.dt[ Image credit: [istockphoto](https://media.istockphoto.com/photos/woman-scientist-screaming-picture-id616093188?k=6&amp;m=616093188&amp;s=612x612&amp;w=0&amp;h=1nrZy_8hdnd0BxG1_q60kBbFYmCrrPkyDe_LvKurKjU=) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/happy-scientists.jpg)
+background-size: cover
+.dt[ Image credit: [edgeforscholars](https://edgeforscholars.org/wp-content/uploads/2017/04/happy-scientists.jpg) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/5141328136_16d8f73ee7_b_BW.jpg)
+background-size: cover
+.dt[ Image credit: [randylane](http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/5141328136_16d8f73ee7_b.jpg)
+background-size: cover
+.dt[ Image credit: [randylane](http://randylane.com/wp-content/uploads/2014/09/5141328136_16d8f73ee7_b.jpg) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/Person-tree.jpg)
+background-size: contain
+.dt[ Image credit: [Pooktree](https://en.wikipedia.org/wiki/Tree#/media/File:Person-tree.jpg) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/Tree-Pruning-diagram.jpg) 
+background-size: contain
+.dt[ Image credit: [quickcrop](https://www.quickcrop.ie/blog/2018/03/pruning-apple-trees-2/) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/birch.jpg)
+background-size: contain
+.dt[ Image credit: [Artplants](https://www.amazon.co.uk/Birch-Foliage-Spray-leaves-green/dp/B00FMQR884) ]
+
+---
+class: bottom, left
+
+background-image: url(./fig/Poisot2019.png)
+background-size: contain
+[Poisot et al. (2019)](https://doi.org/10.1016/j.tree.2019.04.005) 
+
+---
+class: top
+background-image: url(./fig/birch.jpg)
+background-size: 60%
+background-position: 112% 50%
+
+.dt[ Image credit: [Pooktree](https://en.wikipedia.org/wiki/Tree#/media/File:Person-tree.jpg) ]
+
+## Two aspects
+--
+
+1. .red[**Developing**]  
+a new Domain Specific MetaData Scheme
+--
+
+
+2. .red[**Using**]  
+the new Domain Specific MetaData Scheme
+---
+
+## Tool(s) which will help 
+
+--
+#### [.blue[ developer &amp; scientists]: .red[tools they know]]
+
+???
+
+What do we know: Spreadsheets, Web Browser &amp; R 
+--
+
+#### develop a new Domain Specific MetaData Scheme [.blue[ developer &amp; scientists]: .red[R &amp; Spreadsheet]]
+  
+  - together with scientists
+  
+  - encourage buy in &amp; "ownership" of scheme
+  
+???
+
+- As simple as possible, but as complex as necessary
+- Spreadsheet to define scheme
+
+--
+
+#### enter MetaData [.blue[ user]: .red[browser &amp; Spreadsheet]]
+
+  - easy, fun &amp; transparent
+
+???
+
+- Spreadsheet to enter data
+--
+
+#### validate MetaData [.blue[ user]: .red[browser]]
+
+  - report of errors and inconsistencies
+
+???
+
+- Validation report as html or pdf
+--
+
+#### export MetaData [.blue[ user]: .red[browser]]
+  
+  - formats suitable for repository submission &amp; indexing
+
+???
+
+- at the moment only .xml
+---
+background-image: url(./fig/Rlogo.png)
+background-size: 50%
+background-position: middle
+
+---
+class: top
+background-image: url(./fig/Rlogo.png),url(./fig/R-kitten.jpg)
+background-size: 20%, 100%
+background-position: 100% 0%, 50% 50%
+
+.dt[ Image credit: [youtube](https://i.ytimg.com/vi/Uzd9j2r7Hm8/maxresdefault.jpg) ]
+
+---
+class: top
+background-image: url(./fig/Rlogo.png),url(./fig/two-kittens.jpg)
+background-size: 20%, 100%
+background-position: 100% 0%, 50% 50%
+
+.dt[ Image credit: [catsrusrescue](https://catsrusrescue.org/our-shelters-are-always-open-for-business/) ]
+
+---
+class: top
+background-image: url(./fig/Rlogo.png),url(./fig/two-kittens.jpg)
+background-size: 20%, 80%
+background-position: 100% 0%, 120% 100%
+
+.dt[ Image credit: [catsrusrescue](https://catsrusrescue.org/our-shelters-are-always-open-for-business/) ]
+
+## Two R packages
+
+--
+
+1. **scheme generator - developer - `dmdScheme`**
+
+  - template scheme, 
+  - base functionality for 
+      - entering, 
+      - validating and 
+      - exporting the metadata and 
+  - tools to develop new schemes and packages
+  
+--
+
+2. **actual scheme - user - e.g. `emeScheme`**
+
+  - a specific scheme and can contain
+  - additional functionality  for 
+      - entering, 
+      - validating and 
+      - exporting the metadata and
+  - additional specific tools
+
+???
+
+Let's look at the actual spreaadsheet
+---
+class: center, top
+
+background-image: url(./fig/Spreadsheet_Experiment.png)
+background-size: 107%
+background-position: middle center
+
+???
+
+- Experiment based
+- this one is needed
+---
+class: center, top
+
+background-image: url(./fig/Spreadsheet_Species.png)
+background-size: 107%
+background-position: middle center
+
+???
+- sheet can be modified
+- sheets can be removed or added
+
+---
+class: center, top
+
+background-image: url(./fig/Spreadsheet_DataFileMetaData.png)
+background-size: 107% 
+background-position: middle center
+
+???
+- link to data files
+- sheet is needed
+---
+class: center, top
+
+background-image: url(./fig/ValidationReport.png)
+background-size: 105% 
+background-position: middle center
+
+---
+class: inverse, center, middle
+
+# How to develop &lt;br/&gt; a new Domain Specific MetaData Scheme
+(scheme) developer perspective  
+(basic) R knowledge necessary  
+
+---
+class: center, top
+
+background-image: url(./fig/workflow_newScheme.png)
+background-size: contain
+background-position: top center
+
+---
+class: inverse, center, middle
+
+## Live Demo
+How to Develop a New Domain Specific MetaData Scheme
+
+---
+class: inverse, center, middle
+
+# How to use &lt;br/&gt; the new Domain Specific MetaData Scheme
+from a user / researcher perspective  
+no R knowledge necessary  
+basic GUI (shiny app) is available  
+also possible from R
+
+---
+class: center, top
+
+background-image: url(./fig/ShinyApp.png)
+background-size: 43%
+background-position: 50% 25%
+
+---
+class: center, top
+
+background-image: url(./fig/workflow_enterMetaData.png)
+background-size: contain
+background-position: top center
+
+---
+class: inverse, center, middle
+
+# Live Demo
+How to Enter New MetaData
+
+---
+class: center, top
+background-image: url(./fig/qr_email.svg)
+background-size: 10%
+background-position: 80% 100%
+
+
+# Where to go from Here?
+--
+
+### Spread the Word and Develop `dmdSchemes`
+--
+
+### Search Engine for all `dmdScheme`
+### Web Based Repository of `dmdScheme` Definitions
+### Integrate in Existing Repositories
+--
+
+## Are you interested in participating? email me:
+## Rainer.Krug@uzh.ch
+
+---
+class: center, top
+
+background-image: url(./fig/Group_2019.jpg)
+background-size: cover
+background-position: bßottom center
+
+A .red[BIG THANK YOU] to everybody in the our group
+
+--
+
+Particularly the Guinea Pigs
+
+---
+class: center, bottom
+
+background-image: url(./fig/qr_talk.svg),url(./fig/qr_dmdScheme.svg),url(./fig/big_coffee.jpg),url("https://zenodo.org/badge/DOI/10.5281/zenodo.3386062.svg"),url("https://zenodo.org/badge/DOI/10.5281/zenodo.3229615.svg")
+background-size: 10%, 10%, 80%, 20%, 20%
+background-position: 25% 98%, 89% 98%, 50% 0%, 1% 95%, 65% 95%
+
+#  Talk &lt;span style="padding-left:350px"&gt; `dmdScheme` &lt;span style="padding-left:210px"&gt;
+
+.dt[ Image credit: [eater.com](https://www.eater.com/2014/10/30/7131255/starbucks-free-drink-record-83-101-shots-espresso) ]
+
+---
+class: center, middle
+
+background-image: url(./fig/hercules.jpg)
+ 
+[Let's sing together ](https://www.youtube.com/watch?v=yOL-EJZjmp0)
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

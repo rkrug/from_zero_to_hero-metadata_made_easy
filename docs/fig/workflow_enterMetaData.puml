@@ -1,0 +1,31 @@
+@startuml
+
+start
+''''''''''''
+:= Install and load scheme definitions in R
+..R code..
+""install.packages("theNewScheme")""
+""library("theNewScheme")"";
+''''''''''''
+:= Create new emeScheme metadata template
+..R code..
+""enter_new_metadata("theNewScheme", file = "metadata.xlsx", format = TRUE)"";
+''''''''''''
+repeat
+  := Enter / Edit theNewScheme metadata in "metadata.xlsx"
+  using for example
+  ..using..
+  Excel, Pages, Libre Office, Google Docs, ...;
+  := Validate metadata
+  ..R code..
+  ""report(x = "metadata.xlsx", path = ".", report = "html")"";
+repeat while (errors or warnings?) is (yes)
+-> no;
+''''''''''''
+:= Export as xml for further processing
+..R code..
+""dmdScheme_to_xml(x = 'metadata.xlsx', file = 'metadata.xml')"";
+''''''''''''
+stop
+
+@enduml
