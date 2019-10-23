@@ -6,7 +6,7 @@ output: html_document
 
 <p align="center"><sup>1</sup> Department of Evolutionary Biology and Environmental Studies, University of Zürich, Zürich, Switzerland</p>
 
-[![DOI](https://zenodo.org/badge/216552472.svg)](https://zenodo.org/badge/latestdoi/216552472)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3516739.svg)](https://doi.org/10.5281/zenodo.3516739)
 
 ## Abstract
 
